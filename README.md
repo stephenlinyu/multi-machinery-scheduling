@@ -11,6 +11,7 @@
 | `01_static` | 基础遗传算法（MRTA 基线，含论文对比实验） |
 | `02_energy_aware_ga` | 坡度能耗建模 + 自适应突变权重 + 地形距离 |
 | `03_dynamic` | 改进合同网（CNP）+ 变邻域禁忌搜索（VNS）动态重调度 |
+| `ga_solver` | MATLAB→Python 迁移版调度器，可脱离 MATLAB 运行 |
 
 ## 关键技术
 
@@ -21,7 +22,18 @@
 
 ## 运行
 
-MATLAB R2020b 及以上，进入对应目录运行 `main.m`。
+**MATLAB（原始算法）**：R2020b 及以上，进入对应目录运行 `main.m`。
+
+**Python（迁移版，无需 MATLAB）**：
+
+```python
+from ga_solver import solve_schedule
+
+result = solve_schedule(machines, fields)
+print(result['total_cost'])
+```
+
+详见 [ga_solver/README.md](ga_solver/README.md)。
 
 ## 说明
 
