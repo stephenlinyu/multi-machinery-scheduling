@@ -1,0 +1,22 @@
+{
+  "seed": 42,
+  "max_iter": 100,
+  "total_cost": 82.8029608691878,
+  "agents": [
+    {
+      "machine_id": "M1",
+      "task_sequence": [
+        3
+      ],
+      "total_time": 2.118033988749895
+    },
+    {
+      "machine_id": "M2",
+      "task_sequence": [
+        2,
+        1
+      ],
+      "total_time": 3.0
+    }
+  ]
+}

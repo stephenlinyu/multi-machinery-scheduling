@@ -16,13 +16,21 @@ from ga_solver.crossover import crossover
 from ga_solver.crossover_b import crossover_b
 
 
-def run_ga(model):
+def run_ga(model, seed=None, max_iter=None):
     """
     遗传算法主函数
+
+    参数：
+        model    - 调度模型
+        seed     - 随机种子；给定后结果可复现（默认 None，保持原有全局随机行为）
+        max_iter - 最大迭代次数；默认 10000
     """
     
+    if seed is not None:
+        random.seed(seed)
+    
     # ===== GA 参数 =====
-    MaxIt = 10000
+    MaxIt = max_iter if max_iter is not None else 10000
     nPop = 70
     pt = 0.9
     nt = int(pt * nPop)
@@ -172,14 +180,14 @@ def run_ga(model):
         
         if noImproveCount >= 200:
             converged = True
-            print(f'✅ 终止条件达成：连续200次迭代最优成本未改善，停止迭代。')
+            print(f'终止条件达成：连续200次迭代最优成本未改善，停止迭代。')
             break
         
         if it % 10 == 0:
             print(f'Iteration {it} : Best Cost = {BestCost[-1]:.6f}')
     
     if not converged:
-        print(f'⚠️ 达到最大迭代次数 {MaxIt}，停止迭代。')
+        print(f'达到最大迭代次数 {MaxIt}，停止迭代。')
     
     elapsed_time = time.time() - start_time
     print(f'总迭代次数: {len(BestCost)}')

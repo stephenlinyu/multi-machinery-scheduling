@@ -8,12 +8,14 @@ from ga_solver.cost_function import cost_function
 import datetime
 
 
-def solve_schedule(machines, fields):
+def solve_schedule(machines, fields, seed=None, max_iter=None):
     """
     调度求解器
     输入：
         machines - 农机列表
         fields   - 农田列表
+        seed     - 随机种子，给定后结果可复现
+        max_iter - 最大迭代次数，默认 10000
     输出：
         result   - 调度结果
     """
@@ -66,7 +68,7 @@ def solve_schedule(machines, fields):
         model['depots'].append({'h': 310})
     
     # ===== 2. 运行 GA =====
-    best_solution = run_ga(model)
+    best_solution = run_ga(model, seed=seed, max_iter=max_iter)
     
     # ===== 3. 计算每台农机的时间 =====
     _, _, _, _, agent_times = cost_function(best_solution['Position'], model)

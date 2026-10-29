@@ -35,6 +35,15 @@ print(result['total_cost'])
 
 详见 [ga_solver/README.md](ga_solver/README.md)。
 
+## 测试
+
+```bash
+pip install -r requirements-dev.txt
+python -m pytest tests -q
+```
+
+覆盖成本函数手算校验、任务覆盖约束、接口结构、固定种子确定性、回归基线、不同种子稳定性、小规模穷举最优对比等 **20 个用例**。详见 [tests/README.md](tests/README.md)。
+
 ## 说明
 
 - 基线代码来自 **GA_MRTA**，Copyright (c) 2024 Thi Thuy Ngan Duong，MIT License，见 `01_static/LICENSE`。
