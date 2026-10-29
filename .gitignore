@@ -1,0 +1,15 @@
+# MATLAB
+*.asv
+*.mex*
+slprj/
+
+# Data and experiment outputs (not distributed)
+*.xlsx
+*.mat
+*.fig
+*.png
+*.jpg
+
+# OS
+Thumbs.db
+.DS_Store
