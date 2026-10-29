@@ -3,6 +3,13 @@
 *.mex*
 slprj/
 
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+pytest-cache-files-*/
+
 # Data and experiment outputs (not distributed)
 *.xlsx
 *.mat
