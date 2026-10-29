@@ -27,4 +27,4 @@ MATLAB R2020b 及以上，进入对应目录运行 `main.m`。
 
 - 基线代码来自 **GA_MRTA**，Copyright (c) 2024 Thi Thuy Ngan Duong，MIT License，见 `01_static/LICENSE`。
 - 论文实验数据（`.xlsx`）与结果文件未包含在仓库中。
-- Python 迁移版与等价性回归测试见配套仓库 [hilly-farm-scheduler](https://github.com/) 的 `ga_solver`。
+- Python 迁移版与等价性回归测试见配套仓库 [hilly-farm-scheduler](https://github.com/stephenlinyu/hilly-farm-scheduler) 的 `ga_solver`。
